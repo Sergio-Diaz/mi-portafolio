@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio - Sergio Díaz Vargas</title>
     <!-- METADATOS SEO -->
-    <meta name="google-site-verification" content="JPEWedvwQ9CF9gO6-EnC0_BbrLsaLm2DhvXQDokOw4M" />
     <meta
       name="description"
       content="Portafolio de Sergio Díaz, Desarrollador Senior .NET Backend. Especialista en ASP.NET Core, SQL Server y arquitectura de software."
@@ -287,8 +286,10 @@
       .avatar-circle img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Recorta la imagen para que llene sin deformarse */
-        border-radius: 50%; /* La redondea completamente */
+        -webkit-object-fit: cover;
+        object-fit: cover;
+        object-position: center 30%; /* ← Mueve el foco hacia arriba */
+        border-radius: 50%;
         display: block;
       }
 
@@ -752,6 +753,18 @@
       }
 
       @media (max-width: 768px) {
+        section {
+          padding: 4rem 0;
+        }
+        .logo {
+          font-size: 1.4rem;
+        }
+        .skills-grid,
+        .projects-grid,
+        .testimonials-grid {
+          gap: 1.5rem;
+        }
+
         .nav-links {
           position: fixed;
           top: 70px;
@@ -796,20 +809,67 @@
           bottom: 1.5rem;
           right: 1.5rem;
         }
+
+        .logo span {
+          display: none;
+        }
       }
 
       @media (max-width: 480px) {
-        .hero-text h1 {
-          font-size: 2rem;
+        /* Ajustes de padding y espaciado general */
+        section {
+          padding: 3rem 0;
         }
 
-        .hero-text .typed-wrapper {
-          font-size: 1.2rem;
-        }
-
+        /* Botones más pequeños y centrados */
         .btn {
-          padding: 0.6rem 1.5rem;
+          padding: 0.5rem 1.2rem;
           font-size: 0.85rem;
+        }
+        .btn-group {
+          justify-content: center; /* Ya lo tienes, pero lo refuerzo */
+        }
+
+        /* Logo más pequeño */
+        .logo {
+          font-size: 1.3rem;
+        }
+
+        /* Reducir el espacio entre tarjetas */
+        .skills-grid,
+        .projects-grid,
+        .testimonials-grid {
+          gap: 1rem;
+        }
+
+        /* Botón del formulario a ancho completo */
+        .contact-form .btn {
+          align-self: stretch;
+          justify-content: center;
+        }
+
+        /* Ajuste fino del Hero */
+        .hero-text h1 {
+          font-size: 2rem; /* Ya lo tienes, pero lo mantengo */
+        }
+        .hero-text .typed-wrapper {
+          font-size: 1rem; /* Un poco más pequeño */
+        }
+
+        /* Ajuste para el avatar en móviles muy pequeños */
+        .hero-avatar .avatar-circle {
+          width: 150px;
+          height: 150px;
+        }
+
+        /* Opcional: si el menú hamburguesa necesita más espacio */
+        .nav-links {
+          gap: 1rem;
+          padding: 1.5rem 0;
+        }
+
+        .logo span {
+          display: none;
         }
       }
 
@@ -842,15 +902,7 @@
           />
           <span>SD SoftWare Solutions</span>
         </div>
-        <!-- <div class="logo">
-          <img
-            src="images/imagenLogoSergio.jpg"
-            alt="SD Software Solutions"
-            width="60"
-            height="60"
-          />
-          SD SoftWare Solutions
-        </div> -->
+
         <!-- <div class="logo">&lt;Dev/&gt;</div> -->
         <ul class="nav-links" id="navLinks">
           <li><a href="#sobre-mi">Sobre mí</a></li>
