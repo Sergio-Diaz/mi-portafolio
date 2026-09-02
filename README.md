@@ -1,4 +1,4 @@
-﻿# ¡Hola! Soy [Tu Nombre] 👋
+﻿# ¡Hola! Soy Sergio Díaz Vargas 👋
 
 ## Senior .NET Developer | C# Expert | Software Architect
 
